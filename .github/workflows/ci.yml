@@ -12,7 +12,7 @@ jobs:
         defaults:
             run:
                 shell: bash
-                working-directory: ./CISE-W205A-G6/
+                working-directory: ././frontend
 
         strategy:
             matrix:
