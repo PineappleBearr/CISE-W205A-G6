@@ -7,7 +7,7 @@ export default function Navbar() {
             <Link href="/search" >
                 <button className="btn btn-primary mx-2" > Search for Articles </button>
             </Link>
-            <Link href="/search" >
+            <Link href="/manage" >
             <button className="btn btn-primary mx-2" > Manage Article/s </button>
             </Link>
             <Link href="/search" >
