@@ -1,4 +1,5 @@
-
+import Link from 'next/link';
+import '../globals.css'
 
 export default function manage() {
     return (
@@ -6,9 +7,12 @@ export default function manage() {
             <h1 className="text-center mt-5">SPEED App</h1>
             <div className="d-flex justify-content-between align-items-center"> 
                 <h2>Articles to Review</h2>
+                <Link href="/history">
                 <button className="btn btn-primary mx-2">View History</button>
+                </Link>
+              
             </div>
-            <hr className="hr hr-blurry"></hr>
+            <hr ></hr>
             <nav className="navbar">
                 <div className="container d-flex justify-content-start m-5">
                     <table className="table table-bordered table-striped m-5">
