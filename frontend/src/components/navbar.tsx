@@ -8,10 +8,10 @@ export default function Navbar() {
                 <button className="btn btn-primary mx-2" > Search for Articles </button>
             </Link>
             <Link href="/search" >
-            <button className="btn btn-primary mx-2" > Manage Article/s </button>
+            <button className="btn btn-primary mx-2" > Manage Articles </button>
             </Link>
-            <Link href="/search" >
-                <button className="btn btn-primary mx-2" > Submit Article/s </button>
+            <Link href="/submit" >
+                <button className="btn btn-primary mx-2" > Submit Articles </button>
             </Link>
         </nav>
     )

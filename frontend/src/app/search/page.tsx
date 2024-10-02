@@ -15,8 +15,11 @@ export default function Search() {
                             <tr>
                                 <th>ID:</th>
                                 <th>Title:</th>
-                                <th>Author:</th>
+                                <th>Source</th>
+                                <th>Authors:</th>
                                 <th>Publish Date:</th>
+                                <th>DOI</th>
+                                <th>Claim</th>
                             </tr>
                         </thead>
                     </table>
