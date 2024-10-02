@@ -25,11 +25,11 @@ export default function Submit() {
                                 <label htmlFor="pubDateInput" className="form-label mt-4">Publication Date</label>
                                 <input id="pubDateInput" type="date" className="form-control"/>
                                 {/* DOI */}
-                                <label htmlFor="doiInput" className="form-label mt-4">DOI</label>
+                                <label htmlFor="doiInput" className="form-label mt-4">DOI (Source)</label>
                                 <input id="doiInput" type="text" className="form-control" placeholder="e.g. doi.org/10.0000/0000"/>
                                 {/* Source */}
-                                <label htmlFor="sourceInput" className="form-label mt-4">Source</label>
-                                <input id="sourceInput" type="text" className="form-control" placeholder="Website URL"/>
+                                {/* <label htmlFor="sourceInput" className="form-label mt-4">Source</label>
+                                <input id="sourceInput" type="text" className="form-control" placeholder="Website URL"/> */}
                                 {/* Summary */}
                                 <label htmlFor="summaryInput" className="form-label mt-4">Summary</label>
                                 {/* <input id="summaryInput" type="text" className="form-control"/> */}
