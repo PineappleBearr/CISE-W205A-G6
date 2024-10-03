@@ -9,14 +9,15 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    /* --background: #0a0a0a; */
+    --background: url('background_image.png');
     --foreground: #ededed;
   }
 }
 
 body {
   color: var(--foreground);
-  background: var(--background);
+  background-image: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -35,3 +36,7 @@ h2 {
     text-wrap: balance;
   }
 }
+
+/* #Navbar {
+  background-color: rgb(255, 255, 255);
+} */
