@@ -13,6 +13,9 @@ export default function Navbar() {
             <Link href="/search" >
                 <button className="btn btn-primary mx-2" > Submit Article/s </button>
             </Link>
+            <Link href="/login" >
+                <button className="btn btn-primary mx-2" > Login </button>
+            </Link>
         </nav>
     )
 }
