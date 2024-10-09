@@ -13,10 +13,12 @@ export default function Submit() {
         pubDate: '2024-10-10',
         doi: 'doi',
         summary: 'summary',
-        accepted: false
+        accepted: false,
+        numRatings: 0,
+        sumRatings: 0
     })
     
-    const handleChange = (e) => {
+    const handleChange = (e: { target: { name: any; value: any; }; }) => {
         setarticle({
             ...article,
             [e.target.name]: e.target.value,
@@ -39,9 +41,13 @@ export default function Submit() {
             console.log("Submission Error: " + error);
             alert("An error occured when submitting. Please ensure that all fields have been filled with appropriate values.");
         }
-
     };
 
+    async function testAlert() {
+        alert("Retrieving article ratings");
+        // const getResponse = await axios.get();
+        // console.log( getResponse.data);
+    }
 
     //page form
     return (
@@ -83,6 +89,7 @@ export default function Submit() {
                                     <button className="btn btn-secondary px-3 py-2 mx-2.5">Cancel</button>
                                 </div>
                             </div>
+                            <button id="testButton" type="button" onClick={e => {e.preventDefault(); testAlert()}}>Test button</button>
                         </form>
                     </div>
                 </div>

@@ -14,4 +14,10 @@ export class AppController {
   async submitForm(@Body() article: any): Promise<any> {
     return this.appService.savearticle(article)
   }
+
+  //TODO: get articles from db?
+  @Get('articles')
+  getArticles(): string {
+    return "Hello World!";
+  }
 }
