@@ -13,6 +13,7 @@ export default function Submit() {
         pubDate: '2024-10-10',
         doi: 'doi',
         summary: 'summary',
+        accepted: false
     })
     
     const handleChange = (e) => {
