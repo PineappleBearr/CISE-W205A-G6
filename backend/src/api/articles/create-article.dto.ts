@@ -10,4 +10,6 @@ export class CreateArticleDto {
   status: string;
   submitDate: Date;
   processDate: Date;
+  sumRating: number;
+  numRating: number;
 }

@@ -38,6 +38,12 @@ export class Article {
   @Prop({type: Date})
   processDate: Date
 
+  @Prop()
+  sumRating: Number
+
+  @Prop()
+  numRating: Number
+
 }
 
 export const ArticleSchema = SchemaFactory.createForClass(Article);
