@@ -9,19 +9,26 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    /* --background: #0a0a0a; */
+    --background: url('background_image.png');
     --foreground: #ededed;
   }
 }
 
 body {
   color: var(--foreground);
-  background: var(--background);
+  background-image: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
 
 h1 {
-  size: 100px;
+  font-weight: bold;
+  font-size: 30px;
+}
+
+h2 {
+  font-weight: bold;
+  font-size: 24px;
 }
 
 @layer utilities {
@@ -36,3 +43,16 @@ hr {
   border: 0;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
+/* #Navbar {
+  background-color: rgb(255, 255, 255);
+} */
+
+hr {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+/* #Navbar {
+  background-color: rgb(255, 255, 255);
+} */

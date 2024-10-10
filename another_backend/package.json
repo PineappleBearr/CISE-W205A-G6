@@ -1,5 +1,5 @@
 {
-  "name": "backend",
+  "name": "new_backend",
   "version": "0.0.1",
   "description": "",
   "author": "",
@@ -8,7 +8,7 @@
   "scripts": {
     "build": "nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
-    "start": "next start",
+    "start": "nest start",
     "start:dev": "nest start --watch",
     "start:debug": "nest start --debug --watch",
     "start:prod": "node dist/main",
@@ -25,9 +25,7 @@
     "@nestjs/core": "^10.0.0",
     "@nestjs/mongoose": "^10.0.10",
     "@nestjs/platform-express": "^10.0.0",
-    "mongodb": "^6.9.0",
-    "mongoose": "^8.6.3",
-    "next": "^14.2.14",
+    "mongoose": "^8.7.0",
     "reflect-metadata": "^0.2.0",
     "rxjs": "^7.8.1"
   },

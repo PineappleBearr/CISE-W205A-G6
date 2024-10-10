@@ -4,8 +4,17 @@ import { AppService } from './app.service';
 import { MongooseModule } from '@nestjs/mongoose';
 import { ConfigModule } from '@nestjs/config';
 
+// @Module({
+//   imports: [ConfigModule.forRoot(), MongooseModule.forRoot(process.env.DB_URI)],
+//   controllers: [AppController],
+//   providers: [AppService],
+// })
+// export class AppModule {}
+
+
+
 @Module({
-  imports: [ConfigModule.forRoot(), MongooseModule.forRoot(process.env.DB_URI)],
+  imports: [MongooseModule.forRoot(process.env.DB_URI)],
   controllers: [AppController],
   providers: [AppService],
 })
