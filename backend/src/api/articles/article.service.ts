@@ -21,7 +21,7 @@ export class ArticleService {
   }
 
   async findPending(): Promise<Article[]> {
-    return await this.ArticleModel.find().or([{'status': 'submited'}, {'status': ''}]).exec()
+    return await this.ArticleModel.find().or([{'status': 'submitted'}, {'status': ''}]).exec()
   }
 
   async findProcessed(): Promise<Article[]> {
