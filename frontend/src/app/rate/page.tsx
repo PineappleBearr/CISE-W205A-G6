@@ -188,7 +188,7 @@ If not, click "Cancel" to move to the next found article.`)
                 <div className="col-md-11">
                     {/* heading and subtitle */}
                     <h1>Rate articles</h1>
-                    <p className='mt-1'>Enter the title of an article and give it a rating from 1-5 in terms .</p>
+                    <p className='mt-1'>Enter the title of an article and give it a rating from 1-5 in terms of its quality and validity.</p>
                     {/* rating form */}
                     <form onSubmit={e => {e.preventDefault()}}>
                         <div className="form-group">

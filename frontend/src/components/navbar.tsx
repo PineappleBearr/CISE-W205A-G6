@@ -13,11 +13,11 @@ export default function Navbar() {
             <Link href="/submit" >
                 <button className="btn btn-primary mx-2" > Submit Articles </button>
             </Link>
-            <Link href="/login" >
-                <button className="btn btn-primary mx-2" > Login </button>
-            </Link>
             <Link href="/rate" >
                 <button className="btn btn-primary mx-2" > Rate Articles </button>
+            </Link>
+            <Link href="/login" >
+                <button className="btn btn-primary mx-2" > Login </button>
             </Link>
         </nav>
     )
