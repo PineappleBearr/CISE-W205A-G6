@@ -139,6 +139,44 @@ If not, click "Cancel" to move to the next found article.`)
         }
     }
 
+    async function viewRating(articleTitle: HTMLInputElement) {
+        let title = articleTitle.value
+        console.log(title)
+        if (title.length > 0) {
+            alert(`Finding article(s) with the title: "${title}"`)
+
+            //step 1: find matching articles
+            const response = await axios.get(`http://localhost:8082/api/articles/query/3/${title}`)
+            console.log(response.data)
+            console.log(response.data.length)
+            //TODO: also check if article is submitted first
+            if (response.data.length > 0) {
+                //step 2: loop through articles and display their details
+                for(let i = 0; i < response.data.length; i++) {
+                    //display the article's details
+                    let foundArticleID = response.data[i]['_id']
+                    console.log("Article ID: " + foundArticleID)
+                    let foundArticleName = response.data[i]['title']
+                    let foundArticleAuthors = response.data[i]['authors']
+                    let foundArticleNumRating = response.data[i]["numRating"]
+                    let foundArticleSumRating = response.data[i]["sumRating"]
+                    let foundArticleAverageRating = parseFloat((foundArticleSumRating / foundArticleNumRating).toFixed(2))
+                    let confirmRating = confirm(`Article found (${i + 1} of ${response.data.length}): "${foundArticleName}" by "${foundArticleAuthors}".
+Average rating: ${isNaN(foundArticleAverageRating) ? 0.0 : foundArticleAverageRating} (${foundArticleNumRating > 0 ? foundArticleNumRating : 0} ratings)\n
+Is this the article you were looking for?
+If not, click "Cancel" to move to the next found article.`)
+                    //if this is the article the user was looking for and they click "OK", close the dialog
+                    if(confirmRating) {
+                        break;
+                    }
+                }
+            }
+        } else {
+            //if user did not enter a title, display error
+            alert("Error: Please enter an article title first.")
+        }
+    }
+
     //create page
     return (
         // main container
@@ -164,9 +202,14 @@ If not, click "Cancel" to move to the next found article.`)
                             </div>
                         </div>
                         <div className="form-group mt-4">
-                            <button className="btn btn-primary" 
-                                onClick={e => {e.preventDefault(); validateRating(document.getElementById("titleInput") as HTMLInputElement, document.getElementById("ratingInput") as HTMLInputElement)}}>
-                                Submit Rating</button>
+                            <div className="btn-group me-2">
+                                <button className="btn btn-primary" 
+                                    onClick={e => {e.preventDefault(); validateRating(document.getElementById("titleInput") as HTMLInputElement, document.getElementById("ratingInput") as HTMLInputElement)}}>
+                                    Submit Rating</button>
+                                <button className="btn btn-secondary" onClick={e => {e.preventDefault(); viewRating(document.getElementById("titleInput") as HTMLInputElement)}}>
+                                    View Rating
+                                </button>
+                            </div>
                         </div>
                     </form>
                 </div>

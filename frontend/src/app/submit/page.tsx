@@ -54,31 +54,32 @@ export default function Submit() {
         //error message variable
         let errorMessage = "";
         //validate fields
-        if (article.title.length < 1 || article.title.length > 50) errorMessage += "Submission error: Article title must be 1 - 50 characters long\n"
+        if (article.title.length < 1 || article.title.length > 100) errorMessage += "Submission error: Article title must be 1 - 100 characters long\n"
         if (article.authors.length < 1) errorMessage += "Submission error: Authors must be entered\n"
         if (article.claim.length < 1) errorMessage += "Submission error: Claim must be entered\n"
         if (article.yearPub > 2024) errorMessage += "Submission error: Year published must be before 2025\n"
         if (article.doi.length < 1) errorMessage += "Submission error: DOI must be entered\n"
-        if (!article.doi.includes(".org")) errorMessage += "Submission error: DOI should be a link (e.g. doi.org)\n"
+        if (!article.doi.includes(".")) errorMessage += "Submission error: DOI should be a link (e.g. doi.org)\n"
         if (article.source.length < 1) errorMessage += "Submission error: Source must be entered\n"
         if (article.summary.length < 1) errorMessage += "Submission error: Summary must be entered\n"
         //display error message if any fields are not properly entered
-        if (errorMessage.length > 0) alert(errorMessage)
-
-        //if article suggestion has passed all validation checks
-        //attempt to add article details to the database
-        try {
-            //attempt to post
-            const response = await axios.post('http://localhost:8082/api/articles/submit-form', article);
-            //log successful response data
-            console.log('Submission successful: ' + response.data);
-            //display confirmation message
-            alert("Article suggestion has been submitted. The moderation team will examine its details before it is added to SPEED.");
-        } catch(error) {
-            //catch any other types of errors
-            console.log("Submission Error: " + error);
-            //display error message
-            alert("An error occured while submitting. Please ensure that all fields have been filled with appropriate values.");
+        if (errorMessage.length > 0) {alert(errorMessage)}
+        else{
+            //if article suggestion has passed all validation checks
+            //attempt to add article details to the database
+            try {
+                //attempt to post
+                const response = await axios.post('http://localhost:8082/api/articles/submit-form', article);
+                //log successful response data
+                console.log('Submission successful: ' + response.data);
+                //display confirmation message
+                alert("Article suggestion has been submitted. The moderation team will examine its details before it is added to SPEED.");
+            } catch (error) {
+                //catch any other types of errors
+                console.log("Submission Error: " + error);
+                //display error message
+                alert("An error occured while submitting. Please ensure that all fields have been filled with appropriate values.");
+            }
         }
     };
 
