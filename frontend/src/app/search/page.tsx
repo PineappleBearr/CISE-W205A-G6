@@ -77,7 +77,7 @@ export default function Search() {
                                 </th>
                                 <th>
                                     <button className="btn btn-primary" onClick={() => handleSort("author")}>
-                                        Author {sortFilter === "author" && (sortDirection === "asc" ? "↑" : "↓")}
+                                        Authors {sortFilter === "author" && (sortDirection === "asc" ? "↑" : "↓")}
                                     </button>
                                 </th>
                                 <th>

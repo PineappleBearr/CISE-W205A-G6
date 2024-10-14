@@ -4,7 +4,7 @@ import { Date, HydratedDocument } from 'mongoose';
 export type BookDocument = HydratedDocument<Article>;
 
 export enum ARTICLE_STATUS  {
-  submited = 'submited',
+  submitted = 'submitted',
   accepted = 'accepted',
   rejected = 'rejected',
 }
@@ -15,7 +15,7 @@ export class Article {
   title: string;
 
   @Prop({ required: true })
-  authors: string[];
+  authors: string;
 
   @Prop({ required: true })
   source: string;
@@ -29,8 +29,8 @@ export class Article {
   @Prop()
   claim: string;
 
-  @Prop({type: String, enum: ARTICLE_STATUS, default: ARTICLE_STATUS.submited})
-  status: ARTICLE_STATUS;
+  @Prop({type: String, enum: ARTICLE_STATUS, default: ARTICLE_STATUS.submitted})
+  status: ARTICLE_STATUS.submitted;
 
   @Prop({type: Date})
   submitDate: Date;
@@ -44,6 +44,8 @@ export class Article {
   @Prop()
   numRating: Number
 
+  @Prop()
+  summary: string;
 }
 
 export const ArticleSchema = SchemaFactory.createForClass(Article);

@@ -122,7 +122,7 @@ export class ArticleController {
   
 
   // Create/add a Article
-  @Post('/')
+  @Post('submit-form')
   async addArticle(@Body() createArticleDto: CreateArticleDto) {
     try {
       await this.articleService.create(createArticleDto);

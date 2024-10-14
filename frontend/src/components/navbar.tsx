@@ -11,10 +11,13 @@ export default function Navbar() {
             <button className="btn btn-primary mx-2" > Manage Articles </button>
             </Link>
             <Link href="/submit" >
-                <button className="btn btn-primary mx-2" > Submit Article/s </button>
+                <button className="btn btn-primary mx-2" > Submit Articles </button>
             </Link>
             <Link href="/login" >
                 <button className="btn btn-primary mx-2" > Login </button>
+            </Link>
+            <Link href="/rate" >
+                <button className="btn btn-primary mx-2" > Rate Articles </button>
             </Link>
         </nav>
     )

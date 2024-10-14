@@ -12,7 +12,7 @@ import { Schema } from 'mongoose';
     Set by default by the backend
     - accepted*: status of the moderator. true/false - only accepted articles are displayed on the website
     - numRatings: number of ratings (from 1-5) submitted by other users 
-    - sumRatings: sum of all ratings. Used to generate a display an average rating for each article
+    - sumRatings: sum of all ratings. Used to generate and display an average rating for each article
         e.g. numRatings = 7; sumRatings = 30; therefore average rating = 30/7 = 4.3/5.0 
     
     note: "accepted" is required but not included in the form because it is set to FALSE (in

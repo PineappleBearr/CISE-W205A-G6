@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import {  useRouter } from 'next/navigation';
 import Link from "next/link";
 import { Article } from "./Article";
+import Navbar from "./navbar";
 
 interface IProp {
   article?: Article;
@@ -33,7 +34,8 @@ function ManageArticles() {
 
     const [art, setArticle] = useState<Article>(article);
 
-    const authorList = art.authors.map((author) => <span>{author + ","}</span>);
+    // const authorList = art.authors.map((author) => <span>{author + ","}</span>);
+    const authorList = art.authors;
 
     const Action = (status: string) => {
       art["status"] = status;
@@ -82,6 +84,7 @@ function ManageArticles() {
   return (
     <div className="container">
       <h1 className="text-center mt-5">SPEED App</h1>
+      <Navbar/>
       <div className="d-flex justify-content-between align-items-center">
         <h2>Articles to Review</h2>
         <Link href="/history">
@@ -96,7 +99,7 @@ function ManageArticles() {
               <tr>
                 <th>ID</th>
                 <th>Title</th>
-                <th>Author</th>
+                <th>Authors</th>
                 <th>Publish Year</th>
                 <th>Actions</th>
               </tr>

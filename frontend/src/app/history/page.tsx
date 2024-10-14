@@ -1,4 +1,5 @@
 "use client";
+import Navbar from '@/components/navbar';
 import { useState } from 'react';
 
 
@@ -20,6 +21,8 @@ export default function history() {
 
   return (
     <div className="container mt-5">
+      <h1 className="text-center mt-5">SPEED App</h1>
+      <Navbar/>
       <h3>Moderation History</h3>
       <p>15 article suggestions moderated</p>
       <table className="table table-dark table-striped align-middle">

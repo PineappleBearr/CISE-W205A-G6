@@ -1,12 +1,13 @@
 export type Article = {
     _id?: string;
     title?: string;
-    authors: string[];
+    authors: string;
     source?: string;
     doi?: string;
     yearPub?: number;
     claim?: string;
     status?: string;
+    summary?: string,
     submitDate?: Date;
     processDate?: Date;
 }
@@ -14,12 +15,13 @@ export type Article = {
 export const DefaultEmptyArticle: Article = {
     _id: undefined, 
     title: '', 
-    authors: [],
+    authors: '',
     source: '',
     doi: '',
     claim: '',
     yearPub: 1970,
-    status: 'submited',
+    status: 'submitted',
+    summary: '',
     submitDate: undefined,
     processDate: undefined,
 }

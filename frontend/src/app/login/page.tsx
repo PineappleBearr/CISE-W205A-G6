@@ -12,7 +12,7 @@ export default function Login() {
         <div>
             <div className="container">
                 <h1 className="text-center mt-5">
-                    Login
+                    SPEED App
                 </h1>
                 <Navbar />
                 <div className="container d-flex flex-column align-items-center mt-10 border-3 p-10 w-75">
