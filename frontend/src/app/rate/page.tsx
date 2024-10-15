@@ -2,7 +2,7 @@
 
 import Navbar from "@/components/navbar";
 import axios from "axios";
-import { FormEvent, useState } from "react";
+import { useState } from "react";
 // import {findByTitle} from;
 
 export default function Rate() {
@@ -56,22 +56,22 @@ export default function Rate() {
             if (response.data.length > 0) {
                 for(let i = 0; i < response.data.length; i++) {
                     // alert(response.data[i]['title'])
-                    let foundArticleID = response.data[i]['_id']
+                    const foundArticleID = response.data[i]['_id']
                     console.log("Article ID: " + foundArticleID)
-                    let foundArticleName = response.data[i]['title']
-                    let foundArticleAuthors = response.data[i]['authors']
+                    const foundArticleName = response.data[i]['title']
+                    const foundArticleAuthors = response.data[i]['authors']
                     let foundArticleNumRating = response.data[i]["numRating"]
                     let foundArticleSumRating = response.data[i]["sumRating"]
-                    let foundArticleAverageRating = parseFloat((foundArticleSumRating / foundArticleNumRating).toFixed(2))
+                    const foundArticleAverageRating = parseFloat((foundArticleSumRating / foundArticleNumRating).toFixed(2))
                     //confirmation message that handles zero devision (numRating = 0)
-                    let confirmRating = confirm(`Article found (${i + 1} of ${response.data.length}): "${foundArticleName}" by "${foundArticleAuthors}".
+                    const confirmRating = confirm(`Article found (${i + 1} of ${response.data.length}): "${foundArticleName}" by "${foundArticleAuthors}".
 Average rating: ${isNaN(foundArticleAverageRating) ? 0.0 : foundArticleAverageRating} (${foundArticleNumRating > 0 ? foundArticleNumRating : 0} ratings)\n
 Is this the article you want to rate ${rating}/5?
 If not, click "Cancel" to move to the next found article.`)
                     //if user says YES to confirmation message
                     if (confirmRating) {
-                        let numRating = response.data[i]["numRating"]
-                        let sumRating = response.data[i]["sumRating"]
+                        const numRating = response.data[i]["numRating"]
+                        const sumRating = response.data[i]["sumRating"]
                         console.log("Ratings: " + numRating)
                         console.log("Sum of Ratings: " + sumRating)
                         console.log("Average rating: " + sumRating / numRating)
@@ -122,7 +122,7 @@ If not, click "Cancel" to move to the next found article.`)
                             window.location.href = '/search'
                         } catch(error) {
                             //error message
-                            alert("Error occured submitting rating. Please try again")
+                            alert("Error occured submitting rating. Please try again:" + error)
                         }
                         //break loop, finish execution (this shouldn't be reached because of the redirection to the search page)
                         break;
@@ -140,7 +140,7 @@ If not, click "Cancel" to move to the next found article.`)
     }
 
     async function viewRating(articleTitle: HTMLInputElement) {
-        let title = articleTitle.value
+        const title = articleTitle.value
         console.log(title)
         if (title.length > 0) {
             alert(`Finding article(s) with the title: "${title}"`)
@@ -154,14 +154,14 @@ If not, click "Cancel" to move to the next found article.`)
                 //step 2: loop through articles and display their details
                 for(let i = 0; i < response.data.length; i++) {
                     //display the article's details
-                    let foundArticleID = response.data[i]['_id']
+                    const foundArticleID = response.data[i]['_id']
                     console.log("Article ID: " + foundArticleID)
-                    let foundArticleName = response.data[i]['title']
-                    let foundArticleAuthors = response.data[i]['authors']
-                    let foundArticleNumRating = response.data[i]["numRating"]
-                    let foundArticleSumRating = response.data[i]["sumRating"]
-                    let foundArticleAverageRating = parseFloat((foundArticleSumRating / foundArticleNumRating).toFixed(2))
-                    let confirmRating = confirm(`Article found (${i + 1} of ${response.data.length}): "${foundArticleName}" by "${foundArticleAuthors}".
+                    const foundArticleName = response.data[i]['title']
+                    const foundArticleAuthors = response.data[i]['authors']
+                    const foundArticleNumRating = response.data[i]["numRating"]
+                    const foundArticleSumRating = response.data[i]["sumRating"]
+                    const foundArticleAverageRating = parseFloat((foundArticleSumRating / foundArticleNumRating).toFixed(2))
+                    const confirmRating = confirm(`Article found (${i + 1} of ${response.data.length}): "${foundArticleName}" by "${foundArticleAuthors}".
 Average rating: ${isNaN(foundArticleAverageRating) ? 0.0 : foundArticleAverageRating} (${foundArticleNumRating > 0 ? foundArticleNumRating : 0} ratings)\n
 Is this the article you were looking for?
 If not, click "Cancel" to move to the next found article.`)

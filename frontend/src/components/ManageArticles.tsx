@@ -1,18 +1,15 @@
 import React, { useState, useEffect } from "react";
-import {  useRouter } from 'next/navigation';
 import Link from "next/link";
 import { Article } from "./Article";
 import Navbar from "./navbar";
 
 interface IProp {
   article?: Article;
-  index: Number;
+  index: number;
 }
 
 function ManageArticles() {
   const [articles, setArticles] = useState<[Article?]>([]);
-
-  const navigate = useRouter();
 
   useEffect(() => {
     fetch("http://localhost:8082/api/articles/pending")
@@ -28,11 +25,11 @@ function ManageArticles() {
   }, []);
 
   const ArticleItem = ({ article, index }: IProp) => {
-    if (article == undefined) {
+    const [art, setArticle] = useState<Article | undefined>(article);
+    if (!art) {
       return null;
-    }
+    } 
 
-    const [art, setArticle] = useState<Article>(article);
 
     // const authorList = art.authors.map((author) => <span>{author + ","}</span>);
     const authorList = art.authors;
@@ -48,9 +45,10 @@ function ManageArticles() {
         .then((res) => {
           setArticle(art);
           window.location.reload()
+          console.log(res);
         })
         .catch((err) => {
-          console.log("Error from  Article Item");
+          console.log("Error from  Article Item: " + err);
         });
     };
 

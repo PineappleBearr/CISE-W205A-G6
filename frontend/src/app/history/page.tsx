@@ -3,7 +3,7 @@ import Navbar from '@/components/navbar';
 import { useState } from 'react';
 
 
-export default function history() {
+export default function History() {
     // temp data
   const [decisions, setDecisions] = useState([
     { title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt', doi: '10.1234/ijse.2019.00123', dateSubmitted: '21/05/2024', lastModified: '23/05/2024', decision: 'accepted' },
@@ -13,7 +13,7 @@ export default function history() {
     { title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt', doi: '10.1234/ijse.2019.00123', dateSubmitted: '17/03/2024', lastModified: '17/03/2024', decision: 'accepted' },
   ]);
 
-  const handleDecisionChange = (index, newDecision) => {
+  const handleDecisionChange = (index : number, newDecision : string) => {
     const updatedDecisions = [...decisions];
     updatedDecisions[index].decision = newDecision;
     setDecisions(updatedDecisions);

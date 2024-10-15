@@ -6,10 +6,10 @@ import { FormEvent, useState } from "react";
 
 export default function Submit() {
 
-    var currentDate = new Date();
+    const currentDate = new Date();
     console.log(currentDate);
     console.log(`${currentDate.getFullYear()}-${currentDate.getMonth()}-${currentDate.getDay()}`)
-    var dateString = `${currentDate.getFullYear()}-${currentDate.getMonth()+1}-${currentDate.getDate()}`;
+    const dateString = `${currentDate.getFullYear()}-${currentDate.getMonth()+1}-${currentDate.getDate()}`;
     console.log(dateString);
 
     //setting default values
@@ -27,7 +27,7 @@ export default function Submit() {
         sumRating: 0
     })
     
-    const handleChange = (e: { target: { name: any; value: any; }; }) => {
+    const handleChange = (e: { target: { name: string; value: string; }; }) => {
         setarticle({
             ...article,
             [e.target.name]: e.target.value,
@@ -82,10 +82,6 @@ export default function Submit() {
             }
         }
     };
-
-    async function testAlert() {
-        alert("Test alert");
-    }
 
     //page form
     return (
