@@ -12,7 +12,7 @@ function ManageArticles() {
   const [articles, setArticles] = useState<[Article?]>([]);
 
   useEffect(() => {
-    fetch("http://localhost:8082/api/articles/pending")
+    fetch("https://speed-backend-9ri3j3nuc-jacobs-projects-51113990.vercel.app/api/articles/pending")
       .then((res) => {
         return res.json();
       })
@@ -37,7 +37,7 @@ function ManageArticles() {
     const Action = (status: string) => {
       art["status"] = status;
       art["processDate"] = new Date();
-      fetch(`http://localhost:8082/api/articles/${art._id}`, {
+      fetch(`https://speed-backend-9ri3j3nuc-jacobs-projects-51113990.vercel.app/api/articles/${art._id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(art),

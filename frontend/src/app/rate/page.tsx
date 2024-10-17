@@ -49,7 +49,7 @@ export default function Rate() {
         // alert(`Submitting rating for article ${articleId}: ${rating}`)
         try {
             console.log(articleTitle)
-            const response = await axios.get(`http://localhost:8082/api/articles/query/3/${articleTitle}`)
+            const response = await axios.get(`https://speed-backend-9ri3j3nuc-jacobs-projects-51113990.vercel.app/api/articles/query/3/${articleTitle}`)
             console.log(response.data)
             console.log(response.data.length)
             //TODO: also check if article is submitted first
@@ -112,7 +112,7 @@ If not, click "Cancel" to move to the next found article.`)
     
                         try{ 
                             //step 3: update article in database
-                            const ratingResponse = await axios.put(`http://localhost:8082/api/articles/${foundArticleID}`, article);
+                            const ratingResponse = await axios.put(`https://speed-backend-9ri3j3nuc-jacobs-projects-51113990.vercel.app/api/articles/${foundArticleID}`, article);
                             console.log("Success: " + ratingResponse.data)
     
                             //step 4: show confirmation message with new avg. rating
@@ -146,7 +146,7 @@ If not, click "Cancel" to move to the next found article.`)
             alert(`Finding article(s) with the title: "${title}"`)
 
             //step 1: find matching articles
-            const response = await axios.get(`http://localhost:8082/api/articles/query/3/${title}`)
+            const response = await axios.get(`https://speed-backend-9ri3j3nuc-jacobs-projects-51113990.vercel.app/api/articles/query/3/${title}`)
             console.log(response.data)
             console.log(response.data.length)
             //TODO: also check if article is submitted first

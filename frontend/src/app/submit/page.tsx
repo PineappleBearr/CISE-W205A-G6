@@ -69,7 +69,7 @@ export default function Submit() {
             //attempt to add article details to the database
             try {
                 //attempt to post
-                const response = await axios.post('http://localhost:8082/api/articles/submit-form', article);
+                const response = await axios.post('https://speed-backend-9ri3j3nuc-jacobs-projects-51113990.vercel.app/api/articles/submit-form', article);
                 //log successful response data
                 console.log('Submission successful: ' + response.data);
                 //display confirmation message
