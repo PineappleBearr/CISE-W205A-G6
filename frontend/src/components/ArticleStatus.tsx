@@ -22,24 +22,27 @@ function SeeArticles() {
             });
         }, []);
     
-    const ArticleItem = ({ article, index}: IProp) => {
-        const [art, setArticle] = useState<Article | undefined>(article);
-        //if the article doesn't exist
-        if (!art) {return null;}
-        //else, return table headings
-        return (
-            <tr>
-                <th>{index + ""}</th>
-                <th>{art.title}</th>
-                <th>{art.authors}</th>
-                <th>{art.source}</th>
-                <th>{art.doi}</th>
-                <th>{art.yearPub + ''}</th>
-                <th>{art.claim}</th>
-                <th>{art.status?.toUpperCase()}</th>
-            </tr>
-        );
-    };
+        const ArticleItem = ({ article, index }: IProp) => {
+            // If the article doesn't exist
+            if (!article) {
+                return null;
+            }
+        
+            // Else, return table headings
+            return (
+                <tr>
+                    <th>{index + ""}</th>
+                    <th>{article.title}</th>
+                    <th>{article.authors}</th>
+                    <th>{article.source}</th>
+                    <th>{article.doi}</th>
+                    <th>{article.yearPub + ''}</th>
+                    <th>{article.claim}</th>
+                    <th>{article.status?.toUpperCase()}</th>
+                </tr>
+            );
+        };
+        
 
     //create list of articles and map their attributes
     const ArticleItemList = articles.map((article, key)=> (
