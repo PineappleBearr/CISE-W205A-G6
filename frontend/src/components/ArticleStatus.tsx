@@ -10,7 +10,7 @@ interface IProp {
 function SeeArticles() {
     const [articles, setArticles] = useState<[Article?]>([]);
     useEffect(()=>{
-        fetch("http://localhost:8082/api/articles")
+        fetch("https://speed-backend-9ri3j3nuc-jacobs-projects-51113990.vercel.app/api/articles")
             .then((res) => {
                 return res.json();
             })
