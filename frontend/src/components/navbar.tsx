@@ -16,6 +16,9 @@ export default function Navbar() {
             <Link href="/rate" >
                 <button className="btn btn-primary mx-2" > Rate Articles </button>
             </Link>
+            <Link href="/status" >
+                <button className="btn btn-primary mx-2" > Your submissions </button>
+            </Link>
             <Link href="/login" >
                 <button className="btn btn-primary mx-2" > Login </button>
             </Link>
